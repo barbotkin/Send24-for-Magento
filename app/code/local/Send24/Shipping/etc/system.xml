@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+        <carriers translate="label" module="shipping">
+            <groups>
+                <send24_shipping translate="label">
+                    <label>Send24</label>
+         
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <!--
+                            The following fields are available
+                            to modify in the admin panel.
+                            The values are saved in the
+                            database.
+
+                            This shipping carrier abstract checks
+                            this value to determine whether
+                            the carrier should be shown.
+                        -->
+                        <active translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active>
+
+                        <!--
+                            Send24 Consumer Key.
+                        -->
+                        <send24_consumer_key translate="label">
+                            <label>Send24 Consumer Key</label>
+                            <comment>Get consumer key <![CDATA[<a href="https://www.send24.com/apikey/" target="_blank">here</a>]]>.</comment>
+                            <validate>required-entry</validate>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </send24_consumer_key>
+                        <!--
+                            Send24 Consumer Secret
+                        -->
+                        <send24_consumer_secret translate="label">
+                            <label>Send24 Consumer Secret</label>
+                            <comment>Get consumer secret <![CDATA[<a href="https://www.send24.com/apikey/" target="_blank">here</a>]]>.</comment>
+                            <validate>required-entry</validate>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </send24_consumer_secret>
+
+                        <title translate="label">
+                            <label>Title</label>
+                            <validate>required-entry</validate>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>
+
+                        <startexpress_time_select translate="label">
+                            <label>Start time work Express:</label>
+                            <frontend_type>time</frontend_type>
+                            <validate>required-entry</validate>
+                            <comment>Please choose start time work Express.</comment>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </startexpress_time_select>                        
+
+                        <endexpress_time_select translate="label">
+                            <label>End time work Express:</label>
+                            <validate>required-entry</validate>
+                            <comment>Please choose end time work Express.</comment>
+                            <frontend_type>time</frontend_type>
+                            <sort_order>91</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </endexpress_time_select>
+                        <track_notice translate="label">
+                            <label>Return Notice:</label>
+                            <frontend_type>select</frontend_type>
+                            <comment>Enable send track link on mail user.</comment>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1010</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </track_notice> 
+
+                        <return_portal translate="label">
+                            <label>Return portal:</label>
+                            <frontend_type></frontend_type>
+                            <comment>If <![CDATA[<a href="http://www.send24.com/retur-indstilling/" target="_blank">active</a>]]>, then in this field will be a link on return.
+                                <![CDATA[<script type="text/javascript">
+                                document.getElementById("carriers_send24_shipping_return_portal").setAttribute("disabled", "disabled");
+                                document.getElementById("carriers_send24_shipping_return_portal").setAttribute("style", "background: rgba(253, 253, 253, 0.56);border-color: #CACACA;");
+                                </script>]]>
+                            </comment>
+                            <sort_order>1011</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </return_portal>                        
+                          <heading_service translate="label">
+                            <label>Service:</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>114</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </heading_service>
+                        <payment_parcels translate="label">
+                            <label>Payment parcels shop?</label>
+                            <frontend_type>select</frontend_type>
+                            <comment>yes = shop payment, no = user payment</comment>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>117</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </payment_parcels>                        
+
+                        <enable_denmark translate="label">
+                            <label>Send24 Shipping</label>
+                            <comment>enable sending to countries that support in Send24.</comment>
+                            <frontend_type>select</frontend_type>                                                                     
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>     
+                            <sort_order>99</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_denmark>
+
+<!--                         <select_insurance translate="label">
+                            <label>Insurance for Denmark</label>
+                            <comment>Please choose your insurance for Denmark.</comment>
+                            <frontend_type>select</frontend_type>                                                                     
+                            <source_model>send24_shipping/carrier</source_model>     
+                            <sort_order>99</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </select_insurance>    -->
+                        <show_shops translate="label">
+                            <label>Show shops as</label>
+                            <comment>Please choose show shops as map or dropdown.</comment>
+                            <frontend_type>select</frontend_type>                                                                     
+                            <source_model>send24_shipping/map</source_model>     
+                            <sort_order>1120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_shops>
+
+<!--                         <active_distributors translate="label">
+                            <label>Other distributors:</label>    
+                            <frontend_type>multiselect</frontend_type>         
+                            <source_model>send24_shipping/distributors</source_model>
+                            <sort_order>101</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </active_distributors> -->
+
+                        <heading_example translate="label">
+                            <label>Other distributors:</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>101</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </heading_example>
+
+                         <active_gls translate="label comment">
+                            <label>GLS</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>102</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active_gls>
+                        <active_gls_price translate="label comment">
+                            <label>GLS Price</label>
+                            <comment>Price for GLS.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>103</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <active_gls>1</active_gls>
+                            </depends>
+                        </active_gls_price>
+
+                        <active_postdanmark translate="label comment">
+                            <label>PostDanmark</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>104</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active_postdanmark>
+                        <active_postdanmark_price translate="label comment">
+                            <label>PostDanmark Price</label>
+                            <comment>Price for PostDanmark.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>105</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <active_postdanmark>1</active_postdanmark>
+                            </depends>
+                        </active_postdanmark_price>
+
+                        <active_ups translate="label comment">
+                            <label>UPS</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>106</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active_ups>
+                        <active_ups_price translate="label comment">
+                            <label>UPS Price</label>
+                            <comment>Price for UPS.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>107</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <active_ups>1</active_ups>
+                            </depends>
+                        </active_ups_price>
+
+                        <active_dhl translate="label comment">
+                            <label>DHL</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>108</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active_dhl>
+                        <active_dhl_price translate="label comment">
+                            <label>DHL Price</label>
+                            <comment>Price for DHL.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>109</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <active_dhl>1</active_dhl>
+                            </depends>
+                        </active_dhl_price>
+
+                        <active_tnt translate="label comment">
+                            <label>TNT</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active_tnt>
+                        <active_tnt_price translate="label comment">
+                            <label>TNT Price</label>
+                            <comment>Price for TNT.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>111</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <active_tnt>1</active_tnt>
+                            </depends>
+                        </active_tnt_price>
+
+                        <active_bring translate="label comment">
+                            <label>Bring</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>112</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active_bring>
+                        <active_bring_price translate="label comment">
+                            <label>Bring Price</label>
+                            <comment>Price for Bring.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>113</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <active_bring>1</active_bring>
+                            </depends>
+                        </active_bring_price>
+                         <active_smartprice translate="label">
+                            <label>Smart Price</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>116</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active_smartprice>
+
+                       <sort_order translate="label">
+                            <label>Sort Order</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1400</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </sort_order>       
+                    </fields>
+                </send24_shipping>
+            </groups>
+        </carriers>
+    </sections>
+</config>
